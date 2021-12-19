@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { httpGetClient } from './services/api/httpGetClient';
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    httpGetClient("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json")
+  },[])
   return (
     <div className="App">
       <header className="App-header">

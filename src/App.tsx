@@ -1,29 +1,39 @@
-import React, {useEffect} from 'react';
-import { httpGetClient } from './services/api/httpGetClient';
-
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import { httpGetClient } from './services/api/httpGetClient';
+interface Pokemon {
+  avg_spawns: number
+  candy: string
+  egg: string
+  height: string
+  id: number
+  img: string
+  multipliers: number | null
+  name: string
+  num: string
+  prev_evolution: any[]
+  spawn_chance: number
+  spawn_time: string
+  type: string[]
+  weaknesses: string[]
+  weight: string
+}
 
 function App() {
+
+  const [pokemonList, setPokemonList] = useState<Pokemon[]>([])
+
+  async function getPokemonList (){
+    const { data } = await httpGetClient("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json")
+    setPokemonList(data.pokemon)
+  }
+
   useEffect(() => {
-    httpGetClient("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json")
+    getPokemonList()
   },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }

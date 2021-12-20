@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Container } from './style'
+import { Container, NotFound } from './style'
 import PokemonCard from '../PokemonCard'
 import { GlobalContext } from '../../GlobalContext'
 
@@ -9,13 +9,19 @@ const PokemonBoard = () => {
     const {filteredPokemonList} = useContext(GlobalContext)
 
     return (
-        <Container>
-            {filteredPokemonList.map(pokemon => {
-                return (
-                    <PokemonCard pokemon={pokemon}/>
-                )
-            }) }
-        </Container>
+        
+            filteredPokemonList.length > 0 
+            ?(
+                <Container>
+                {filteredPokemonList.map(pokemon => {
+                    return (
+                        <PokemonCard pokemon={pokemon}/>
+                    )
+                })} 
+                </Container>
+            ) 
+            : <NotFound>Não foi possível localizar pokemons</NotFound>
+        
     )
 }
 

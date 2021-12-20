@@ -5,6 +5,8 @@ const Container = styled.section`
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
+  width: 100%;
+
 
   @media(max-width: 1024px){
     grid-template-columns: 1fr 1fr 1fr;
@@ -19,4 +21,13 @@ const Container = styled.section`
   }
 
 `
-export {Container}
+
+const NotFound = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 70vh;
+`
+
+export {Container, NotFound}

@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import { PokemonBoard } from './components/PokemonBoard';
 
-function App() {
+function App(){
 
 
   return (

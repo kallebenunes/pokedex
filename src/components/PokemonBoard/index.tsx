@@ -1,27 +1,16 @@
-import { useEffect, useState} from 'react'
-import { httpGetClient } from '../../services/api/httpGetClient'
+import { useContext } from 'react'
 import { Container } from './style'
-import { Pokemon } from '../../types/pokemon'
 import PokemonCard from '../PokemonCard'
+import { GlobalContext } from '../../GlobalContext'
 
 
 const PokemonBoard = () => {
 
-    const [pokemonList, setPokemonList] = useState<Pokemon[]>([])
-
-    async function getPokemonList (){
-      const { data } = await httpGetClient("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json")
-      setPokemonList(data.pokemon)
-    }
-  
-    useEffect(() => {
-      getPokemonList()
-    },[])
-
+    const {filteredPokemonList} = useContext(GlobalContext)
 
     return (
         <Container>
-            {pokemonList.map(pokemon => {
+            {filteredPokemonList.map(pokemon => {
                 return (
                     <PokemonCard pokemon={pokemon}/>
                 )

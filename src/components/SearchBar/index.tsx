@@ -1,24 +1,28 @@
-import { ChangeEvent,FormEvent, useState } from 'react'
+import { ChangeEvent,FormEvent, useContext, useState } from 'react'
+import { GlobalContext } from '../../GlobalContext'
 import {Container} from './style'
+
 const SearchBar = () => {
+    
+    const {pokemonList, setFilteredPokemonList} = useContext(GlobalContext)
 
     const [inputSearch, setInputSearch] = useState("")
-  
-
-
     
 
     function handleInputSearch(e: ChangeEvent<HTMLInputElement>){
         setInputSearch(e.target.value)
-        
+     
     }
 
     function handleSubmitForm(e: FormEvent<HTMLFormElement> ){
         e.preventDefault()
-        
+        const filteredArray = pokemonList.filter(item =>{
+            return item.name.toLowerCase().includes(inputSearch.toLowerCase()) ||
+            item.id === Number(inputSearch)
+        })
+       
+        setFilteredPokemonList(filteredArray)
     }
-    
-
 
 
     return (

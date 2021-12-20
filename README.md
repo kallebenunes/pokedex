@@ -1,4 +1,4 @@
-### To see the project online access link bewlo
+### To see the project online access link below
 https://pokedex-one-flax.vercel.app/
 
 If you want to run in your machine, clone this repo and follow the steps below

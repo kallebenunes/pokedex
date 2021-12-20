@@ -27,10 +27,12 @@ const SearchBar = () => {
 
     return (
         <Container>
-            <form onSubmit={handleSubmitForm} id="divBusca">
-                <input onChange={handleInputSearch} value={inputSearch} type="text" id="txtBusca" placeholder="Pesquisar..."/>
-                <input type="submit" value="Pesquisar" alt="Pesquisar"/>
-            </form>
+            <div>
+                <form onSubmit={handleSubmitForm} id="divBusca">
+                    <input onChange={handleInputSearch} value={inputSearch} type="text" id="txtBusca" placeholder="Pesquisar..."/>
+                    <input type="submit" value="Pesquisar" alt="Pesquisar"/>
+                </form>
+            </div>
         </Container>
     )
 }

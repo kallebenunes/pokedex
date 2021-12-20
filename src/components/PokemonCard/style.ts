@@ -36,6 +36,39 @@ const Container = styled.div`
     padding: .3rem;
     margin: .2rem;
     border-radius: 5px;
+
+    &.grass {
+      background: #00db4d;
+      color: #222222;
+    }
+
+    &.fire {
+      background: #f78d00;
+      color: #fff;
+    }
+
+    &.poison {
+      background: #bf75f0;
+      color: #fff;
+    }
+
+    &.flying {
+      background: #9bfaff;
+      color: #222222;
+    }
+
+    &.water {
+      background: #397da2;
+    }
+
+    &.ground {
+      background: #b6b6b6;
+    }
+
+    &.bug {
+      background: #0314e9;
+      color: #fff;
+    }
   }
 `;
 

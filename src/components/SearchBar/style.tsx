@@ -2,9 +2,10 @@ import styled from 'styled-components';
 const Container  = styled.div`
     background: #2c2c2c;
     color: white;
-    padding: 1rem 0;
+    padding: 1rem;
 
-    form {
+    div {
+        form {
         display: flex;
     }
 
@@ -21,6 +22,7 @@ const Container  = styled.div`
         
         margin-left: .5rem;
         color: #FFF;
+    }
     }
 `;
 export  {Container}

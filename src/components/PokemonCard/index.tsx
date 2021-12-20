@@ -19,7 +19,7 @@ const PokemonCard:FC<PokemonBoardProps> = ({pokemon}) => {
             <h1 className="pokemon-name">{pokemon.name}</h1>
             <div className="pokemon-type-container">
                 {pokemon.type.map(type => {
-                    return <span className={`pokemon-type ${type}`}>{type}</span>
+                    return <span className={`pokemon-type ${type.toLowerCase()}`}>{type}</span>
                 })}
             </div>
         </Container>

@@ -8,9 +8,15 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0 auto;
-    padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
-    max-width: 1024px;
+    max-width: 1440px;
+
+  }
+
+  @media(max-width: 1024px){
+    /* body {
+      padding: 0 2rem;
+    } */
   }
 `;
  
